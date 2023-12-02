@@ -30,3 +30,21 @@ if is_possible:
     print("the game is possible")
 else:
     print("the game is not possible")
+
+
+
+def tryCubeConundrum():
+    i = 0
+    j = 0
+    with open('Day2/games.txt', 'r') as file:
+        for line in file:
+            is_possible = cubeConundrum(line)
+            if is_possible:
+                print("the game is possible")
+                i = i+1
+            else:
+                print("the game is not possible")
+                j = j+1
+
+    print("games possible : ",i, " games impossible : ", j)
+tryCubeConundrum()
