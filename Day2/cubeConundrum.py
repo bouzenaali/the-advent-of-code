@@ -23,27 +23,18 @@ def cubeConundrum(game_input):
     return True
 
 
-game = '1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue'
-
-is_possible = cubeConundrum(game)
-if is_possible:
-    print("the game is possible")
-else:
-    print("the game is not possible")
-
-
 
 def tryCubeConundrum():
-    i = 0
-    j = 0
+    i = 1
+    j = 1
     with open('Day2/games.txt', 'r') as file:
         for line in file:
             is_possible = cubeConundrum(line)
             if is_possible:
-                print("the game is possible")
+                print("game",i+j-1 ,"is possible")
                 i = i+1
             else:
-                print("the game is not possible")
+                print("game",i+j-1 ,"is not possible")
                 j = j+1
 
     print("games possible : ",i, " games impossible : ", j)
