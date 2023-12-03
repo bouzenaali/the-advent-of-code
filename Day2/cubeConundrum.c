@@ -2,10 +2,14 @@
 #include <stdio.h>
 #include <string.h>
 
+
+#define  RED_COUNT = 12;
+#define  GREEN_COUNT = 13;
+#define  BLUE_COUNT = 14;
+
+
 int main(int argc, char *argv[]) {
-    int red_count = 12;
-    int green_count = 13;
-    int blue_count = 14;
+
 
     for (int i = 1; i < argc; i++) {
         char count[10];
@@ -17,16 +21,16 @@ int main(int argc, char *argv[]) {
             i++;
 
             if (strcmp(color, "red,") == 0) {
-                red_count -= atoi(count);
+                RED_COUNT -= atoi(count);
             } else if (strcmp(color, "blue,") == 0) {
-                blue_count -= atoi(count);
+                BLUE_COUNT -= atoi(count);
             } else if (strcmp(color, "green,") == 0) {
-                green_count -= atoi(count);
+                GREEN_COUNT -= atoi(count);
             }
         }
     }
 
-    if (red_count < 0 || blue_count < 0 || green_count < 0) {
+    if (RED_COUNT < 0 || BLUE_COUNT < 0 || GREEN_COUNT < 0) {
         printf("This game is not possible\n");
     } else {
         printf("This game is possible\n");
