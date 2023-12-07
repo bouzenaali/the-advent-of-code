@@ -23,19 +23,10 @@ from maps import createMaps
 
 
 # TEST
-def tryConverter():
-    with open("Day5/test.txt", "r") as file:
-        for line in file:
-            if "seeds" in line:
-                seeds = line.split()
-                seeds = seeds[1:]
-                print(f"seeds: {seeds}")
-            
-            
 
-tryConverter()
-seedToSoil, soilToFertilizer, fertilizerToWater, waterToLight, lightToTemperature, temperatureToHumidity, humidityToLocation = createMaps()
+seeds, seedToSoil, soilToFertilizer, fertilizerToWater, waterToLight, lightToTemperature, temperatureToHumidity, humidityToLocation = createMaps()
 
+print(f"seeds: {seeds}")
 print(f"seeds to soil map: {seedToSoil}")
 print(f"soil to fertilizer: {soilToFertilizer}")
 print(f"fertilizer to water: {fertilizerToWater}")

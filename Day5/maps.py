@@ -1,3 +1,4 @@
+seeds = []
 seedToSoil = []
 soilToFertilizer = []
 fertilizerToWater = []
@@ -7,13 +8,16 @@ temperatureToHumidity = []
 humidityToLocation = []
 
 def createMaps():
-    
+
     current_map = None
     with open("Day5/test.txt", "r") as file:
         for line in file:
             line = line.strip()
 
-            if line.startswith("seed-to-soil map:"):
+            if line.startswith("seeds:"):
+                seeds = line.split()
+                seeds = seeds[1:]
+            elif line.startswith("seed-to-soil map:"):
                 current_map = seedToSoil
             elif line.startswith("soil-to-fertilizer map:"):
                 current_map = soilToFertilizer
@@ -37,4 +41,4 @@ def createMaps():
 
                   
 
-    return seedToSoil, soilToFertilizer, fertilizerToWater, waterToLight, lightToTemperature, temperatureToHumidity, humidityToLocation
+    return seeds, seedToSoil, soilToFertilizer, fertilizerToWater, waterToLight, lightToTemperature, temperatureToHumidity, humidityToLocation
