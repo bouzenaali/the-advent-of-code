@@ -23,7 +23,7 @@ def calcErrorMargin(records):
     return i
 
 
-def tryScript(time, distance):
+def tryScript():
     j = 0
     i = 1
     for elm in TIME:
@@ -35,5 +35,21 @@ def tryScript(time, distance):
 
     return i
 
-result = tryScript(TIME, DISTANCE)
+result = tryScript()
 print(result)
+
+# SECOND PART 
+
+TIME = 44826981
+DISTANCE = 202107611381458
+
+def tryScript2():
+
+    distance = clacDistance(TIME)
+    records = checkRecord(DISTANCE, distance)
+
+
+    return distance
+
+result = tryScript2()
+print(len(result))
